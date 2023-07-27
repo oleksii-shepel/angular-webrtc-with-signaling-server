@@ -1,0 +1,35 @@
+
+.grid {
+  margin: auto;
+  height: 100%;
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & > .own-video {
+    height: 66%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  & > div {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    & > .their-video {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 33%;
+      justify-content: center;
+      align-items: stretch;
+
+      & > video {
+        width: 100%;
+      }
+    }
+  }
+}

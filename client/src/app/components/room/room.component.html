@@ -1,0 +1,13 @@
+<div class="grid">
+  <div class="own-video">
+      <div>{{stream?.id}}</div>
+      <video [srcObject]="getLocalVideo()" autoplay muted></video>
+  </div>
+  <div>
+    <div class="their-video" *ngFor="let peer of peers">
+      <div>{{peer.stream.id}}</div>
+      <video [srcObject]="peer.stream" autoplay></video>
+    </div>
+  </div>
+</div>
+
