@@ -15,6 +15,6 @@ npm run start
 cd ..
 ```
 
-2. Open your browser to https://localhost:4200/ and copy link in address bar. You will see video stream that is captured by your camera.
+2. Open your browser to https://localhost:4200/ and copy link displayed in address bar. You will see video stream that is captured by your camera.
 
 3. Open additional windows with link copied to simulate peer connections 

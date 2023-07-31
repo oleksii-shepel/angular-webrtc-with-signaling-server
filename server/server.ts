@@ -18,7 +18,7 @@ const rooms = {} as any;
 const userIds = {} as any;
 
 const server = http.createServer(expressApp);
-const socketio = new Server(server, {
+const io = new Server(server, {
   cors: {
     origin: "http://localhost:4200",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -27,9 +27,8 @@ const socketio = new Server(server, {
 
 export function run(config: any = {}) {
 
-  // server.listen(config.PORT);
+  server.listen(config.PORT);
   console.log('Listening on', config.PORT);
-  const io = socketio.listen(+config.PORT);
   io.on('connection', function (socket) {
 
     let currentRoom: string, id: number;
