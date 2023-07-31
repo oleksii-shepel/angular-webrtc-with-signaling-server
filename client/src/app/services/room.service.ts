@@ -19,7 +19,7 @@ export class RoomService {
   roomId: any;
   stream: MediaStream | undefined;
 
-  socket = IoService.io.connect(`http://localhost:${process.env['PORT'] || 5000}`);
+  socket = IoService.io.connect(`http://localhost:${process.env['PORT'] || 5000}`, { transports: ["websocket"] });
   connected = false;
 
   getPeerConnection(id: any) {

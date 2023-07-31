@@ -13,10 +13,7 @@ const rooms = {};
 const userIds = {};
 const server = http.createServer(expressApp);
 const io = new Server(server);
-
 export function run(config = {}) {
-    server.listen(config.PORT);
-    console.log('Listening on', config.PORT);
     io.on('connection', function (socket) {
         let currentRoom, id;
         socket.on('init', (data, callback) => {
@@ -61,4 +58,7 @@ export function run(config = {}) {
             });
         });
     });
+    
+    console.log('Listening on', config.PORT);
+    server.listen(config.PORT);
 }
