@@ -5,7 +5,7 @@ import * as uuid from 'uuid';
 
 const expressApp = express();
 
-// expressApp.use(express.static('dist/public'));
+expressApp.use(express.static('public'));
 
 expressApp.use(express.json());
 expressApp.use(express.urlencoded({ extended: true }));
@@ -29,6 +29,7 @@ export function run(config: any = {}) {
 
   server.listen(config.PORT);
   console.log('Listening on', config.PORT);
+  
   io.on('connection', function (socket) {
 
     let currentRoom: string, id: number;

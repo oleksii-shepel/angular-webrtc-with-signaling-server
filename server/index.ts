@@ -1,6 +1,6 @@
-import config from './config/config.json' assert { type: "json" };
 import * as server from './server.js'; 
 
-config.PORT = process.env.PORT || config.PORT;
+let config = {} as any;
+config.PORT = process.env.PORT || 5000;
 
 server.run(config);
