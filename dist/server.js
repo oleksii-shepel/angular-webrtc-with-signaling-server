@@ -12,12 +12,8 @@ expressApp.get('/hello', (req, res) => {
 const rooms = {};
 const userIds = {};
 const server = http.createServer(expressApp);
-const io = new Server(server, {
-    cors: {
-        origin: "http://localhost:4200",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    }
-});
+const io = new Server(server);
+
 export function run(config = {}) {
     server.listen(config.PORT);
     console.log('Listening on', config.PORT);
